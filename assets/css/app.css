@@ -1,0 +1,252 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap");
+
+:root {
+  --light-grey: rgba(58, 59, 61, 1);
+  --dark: rgba(36, 37, 39, 1);
+  --white: rgba(255, 255, 255, 1);
+  --purple: rgba(104, 92, 254, 1);
+  --cream: rgba(246, 244, 255, 1);
+  --bg-color: rgba(247, 247, 247, 1);
+  --grey: #999;
+  --orange: rgba(233, 165, 14, 1);
+  --orange-transparent: rgba(233, 165, 14, 0.125);
+
+  --sidebar-width: 250px;
+
+  --transition: all 300ms ease-in-out;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  background: var(--bg-color);
+}
+
+::before,
+::after,
+* {
+  box-sizing: border-box;
+  list-style: none;
+  text-decoration: none;
+  margin: 0;
+  padding: 0;
+  transition: var(--transition);
+}
+
+/* =====================header design========================== */
+
+header {
+  width: 100%;
+  height: 3rem;
+  background: var(--dark);
+}
+
+/* ================sidebar design======================= */
+
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  /* width: var(--sidebar-width); */
+  width: 2.5rem;
+  height: 100%;
+  background: var(--white);
+  box-shadow: 0 0 3px 0 rgba(0, 0, 0, 0.125);
+  padding: 1rem 0.5rem;
+  transition: var(--transition);
+  z-index: 1000;
+}
+
+.full-width {
+  width: var(--sidebar-width);
+}
+.sidebar .sidebar-top {
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+.small-logo-size {
+  font-size: 0.9rem;
+  width: 1rem;
+  height: 1rem;
+}
+
+.sidebar .sidebar-top .logo-text-img {
+  background: var(--purple);
+  display: grid;
+  place-items: center;
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 3px;
+  color: var(--white);
+  font-size: 1rem;
+  letter-spacing: -0.3rem;
+  font-weight: 800;
+}
+
+.commonHidden {
+  display: none;
+}
+.sidebar .sidebar-top img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.sidebar .sidebar-top .logo-name {
+  display: flex;
+  margin-left: 0.5rem;
+  font-size: 1.2rem;
+}
+.sidebar .sidebar-top .sidebar-toggle-btn {
+  width: 2rem;
+  height: 2rem;
+  display: grid;
+  place-items: center;
+  font-size: 2rem;
+  background: var(--purple);
+  position: absolute;
+  right: -1rem;
+  border-radius: 50%;
+  color: var(--white);
+  cursor: pointer;
+}
+
+/* ================sidebar-content================== */
+
+.sidebar-content .links {
+  display: flex;
+  flex-direction: column;
+}
+.sidebar-content .links .link-item {
+  position: relative;
+  display: flex;
+}
+
+.sidebar-content .links .link-item a {
+  display: flex;
+  width: 100%;
+  /* width: 2.5rem; */
+  font-size: 0.9rem;
+  display: flex;
+  align-items: center;
+  color: var(--dark);
+  margin: 0.5rem 0;
+  white-space: nowrap;
+  overflow-x: hidden;
+  position: relative;
+}
+.sidebar-content .links .link-item > a:hover {
+  background: var(--orange-transparent);
+  color: var(--orange);
+}
+.sidebar-content .links .link-item a i {
+  width: 2.5rem;
+  height: 2.5rem;
+  display: grid;
+  place-items: center;
+  font-size: 1.2rem;
+}
+.sidebar-content .links .link-item a .sidebar-Text {
+  padding: 0.3rem;
+  display: flex;
+  white-space: nowrap;
+  /* background-color: red; */
+  margin-left: 0.8rem;
+}
+
+.user-settings-container {
+  position: absolute;
+  right: 280px;
+  bottom: 0;
+  width: 250px;
+  height: fit-content;
+  border-radius: 8px;
+  background: var(--white);
+  box-shadow: 0 0 6px 0 rgba(0, 0, 0, 0.125);
+  padding: 1rem;
+  transition: all 500ms ease-in-out;
+  z-index: -1;
+}
+
+.user-settings-container a {
+  transition: var(--transition);
+}
+.sidebar-account {
+  right: -270px;
+  z-index: -1;
+  animation-name: settings-container;
+  animation-duration: 4s;
+}
+@keyframes settings-container {
+  0% {
+    opacity: 0.5;
+  }
+  25% {
+    opacity: 0.7;
+  }
+  50% {
+    opacity: 0.8;
+    height: fit-content;
+  }
+  100% {
+    opacity: 1;
+    height: fit-content;
+  }
+}
+
+.user-settings-container .user-photo-name {
+  display: flex;
+  align-items: center;
+}
+.user-settings-container .user-photo-name .photo {
+  width: 2rem;
+  height: 2rem;
+  overflow: hidden;
+  border-radius: 3px;
+}
+.user-settings-container .user-photo-name img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.user-settings-container .user-photo-name .user-login {
+  margin-left: 1rem;
+}
+.user-settings-container .user-photo-name .user-login p:nth-of-type(1) {
+  color: var(--dark);
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+.user-settings-container .user-photo-name .user-login p:nth-of-type(2) {
+  color: var(--grey);
+  font-weight: 200;
+  font-size: 0.7rem;
+}
+.user-settings-container::before {
+  position: absolute;
+  left: -1rem;
+  bottom: 1rem;
+  content: "";
+  border-top: 8px solid transparent;
+  border-bottom: 8px solid transparent;
+  border-left: 8px solid transparent;
+  border-right: 8px solid var(--white);
+}
+
+.user-settings-container .user-profile-links a:hover {
+  background: var(--orange-transparent);
+  color: var(--orange);
+}
+
+.sidebar-heading {
+  width: 100%;
+  overflow-x: hidden;
+  white-space: nowrap;
+  opacity: 0;
+  visibility: hidden;
+  transition: var(--transition);
+}
+
+.show-sidebar-heading {
+  opacity: 1;
+  visibility: visible;
+}
