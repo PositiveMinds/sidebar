@@ -1,5 +1,4 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap");
-
 :root {
   --light-grey: rgba(58, 59, 61, 1);
   --dark: rgba(36, 37, 39, 1);
@@ -13,17 +12,13 @@
   --orange-transparent: rgba(233, 165, 14, 0.125);
   --dark-blue: rgba(0, 14, 75, 1);
   --pink: rgba(204, 17, 119, 1);
-
   --sidebar-width: 250px;
-
   --transition: all 300ms ease-in-out;
 }
-
 body {
   font-family: "Poppins", sans-serif;
   background: var(--bg-color);
 }
-
 ::before,
 ::after,
 * {
@@ -34,7 +29,6 @@ body {
   padding: 0;
   transition: var(--transition);
 }
-
 /* =====================header design========================== */
 header {
   width: 100%;
@@ -42,13 +36,11 @@ header {
   background: var(--white);
   box-shadow: 0 0 3px 0 rgba(0, 0, 0, 0.125);
 }
-
 /* ================sidebar design======================= */
 .sidebar {
   position: fixed;
   top: 0;
   left: 0;
-  /* width: var(--sidebar-width); */
   width: 2.5rem;
   height: 100%;
   background: var(--white);
@@ -56,7 +48,6 @@ header {
   padding: 1rem 0.5rem;
   transition: var(--transition);
   z-index: 1000;
-  /* display: none; */
 }
 .full-width {
   width: var(--sidebar-width);
@@ -71,7 +62,6 @@ header {
   width: 1rem;
   height: 1rem;
 }
-
 .rotate-sidebar-toggle-btn {
   transform: rotate(180deg);
 }
@@ -114,7 +104,6 @@ header {
   color: var(--white);
   cursor: pointer;
 }
-
 /* ================sidebar-content================== */
 .sidebar-content .links {
   display: flex;
@@ -125,35 +114,27 @@ header {
   display: flex;
 }
 .sidebar-content .links .link-item a {
-  /* position: relative; */
   display: flex;
   width: 100%;
-  /* width: 2.5rem; */
   font-size: 0.9rem;
   display: flex;
   align-items: center;
   color: var(--dark);
   margin: 0.5rem 0;
   white-space: nowrap;
-  /* overflow-x: hidden;
-  position: relative; */
 }
-
 .sidebar-content .separator {
   height: 1px;
   background: var(--orange-transparent);
   margin: 1rem 0;
 }
-
 .dashboardActiveLink {
   border-right: 1px solid var(--purple);
 }
-
 .hideSidebar-text {
   opacity: 0;
   visibility: hidden;
 }
-
 .sidebar-notication-count {
   position: absolute;
   top: 0;
@@ -167,10 +148,8 @@ header {
   padding: 0.2rem;
   font-weight: 600;
 }
-
 .sidebar-content .links .link-item .common-style:hover {
   background: var(--orange-transparent);
-  /* color: var(--purple); */
 }
 .sidebar-content .links .link-item a i {
   width: 2.5rem;
@@ -183,10 +162,8 @@ header {
   padding: 0.3rem;
   display: flex;
   white-space: nowrap;
-  /* background-color: red; */
   margin-left: 0.8rem;
 }
-
 .user-settings-container {
   position: absolute;
   right: 280px;
@@ -200,11 +177,9 @@ header {
   transition: all 500ms ease-in-out;
   z-index: -1;
 }
-
 .sidebar-notifications {
   position: relative;
 }
-
 .sidebar-notification-container {
   position: absolute;
   right: 280px;
@@ -218,18 +193,6 @@ header {
   transition: all 500ms ease-in-out;
   z-index: -1;
 }
-
-/* .sidebar-notification-container::before {
-  position: absolute;
-  left: -1rem;
-  bottom: 1rem;
-  content: "";
-  border-top: 8px solid transparent;
-  border-bottom: 8px solid transparent;
-  border-left: 8px solid transparent;
-  border-right: 8px solid var(--white);
-} */
-
 .toggle-sidebar-notification-container {
   right: -320px;
   z-index: -1;
@@ -242,7 +205,6 @@ header {
   grid-template-columns: 1fr 75% 1fr;
   margin: 1rem 0;
 }
-
 .notification-activity:not(:last-of-type) {
   border-bottom: 1px solid var(--orange-transparent);
 }
@@ -250,14 +212,12 @@ header {
   display: flex;
   flex-wrap: wrap;
 }
-
 .notification-activity .contact-name,
 .notification-activity .activity-name {
   font-size: 0.8rem;
   color: var(--dark-blue);
   font-weight: 500;
 }
-
 .activity-icon {
   color: var(--pink);
   width: 2rem;
@@ -267,7 +227,6 @@ header {
   align-items: center;
   justify-content: center;
 }
-
 .notification-activity .notification-type {
   font-size: 0.8rem;
   color: var(--grey);
@@ -275,7 +234,6 @@ header {
 .notification-activity .contact-photo {
   width: 2rem;
   height: 2rem;
-  /* overflow: hidden; */
   border-radius: 50%;
   margin-right: 0.5rem;
   position: relative;
@@ -284,7 +242,6 @@ header {
   width: 8px;
   height: 8px;
   border-radius: 50%;
-
   position: absolute;
   bottom: 0.2rem;
   left: 1.6rem;
@@ -297,7 +254,6 @@ header {
   background: var(--grey);
   border: 1px solid var(--white);
 }
-
 .notification-activity img {
   width: 100%;
   height: 100%;
@@ -311,7 +267,6 @@ header {
 .notification-activity .comment-icon {
   color: var(--purple);
 }
-
 .photo-icon {
   width: 2rem;
   height: 2rem;
@@ -325,11 +280,9 @@ header {
 .user-settings-container a {
   transition: var(--transition);
 }
-
 .sidebar-account-settings {
   margin-left: 1rem;
 }
-
 .sidebar-account-settings-hidden {
   display: none;
 }
@@ -355,7 +308,6 @@ header {
     height: fit-content;
   }
 }
-
 .user-settings-container .user-photo-name {
   display: flex;
   align-items: center;
@@ -395,16 +347,10 @@ header {
   border-left: 8px solid transparent;
   border-right: 8px solid var(--white);
 }
-
 .user-settings-container .user-profile-links a:hover {
   background: var(--orange-transparent);
   color: var(--pink);
 }
-
-.user-settings-container .user-profile-links i {
-  /* color: var(--pink); */
-}
-
 .sidebar-heading {
   width: 100%;
   overflow-x: hidden;
@@ -413,15 +359,12 @@ header {
   visibility: hidden;
   transition: var(--transition);
 }
-
 .show-sidebar-heading {
   opacity: 1;
   visibility: visible;
   color: var(--light-grey);
 }
-
 /* main-wrapper============================================== */
-
 .main-wrapper {
   width: 93%;
   max-width: 1440px;
