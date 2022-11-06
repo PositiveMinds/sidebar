@@ -3,6 +3,7 @@ const sidebar = document.querySelector(".sidebar");
 const sidebarText = document.querySelectorAll(".sidebar-Text");
 const sidebarHeading = document.querySelector(".sidebar-heading");
 const logoTextImg = document.querySelector(".logo-text-img");
+const logoName = document.querySelector(".logo-name");
 const sidebarAccountSettings = document.querySelector(
   ".sidebar-account-settings"
 );
@@ -13,9 +14,8 @@ sidebarToggle.addEventListener("click", () => {
   logoTextImg.classList.toggle("commonHidden");
   sidebarAccountSettings.classList.toggle("sidebar-account-settings-hidden");
   sidebarToggle.classList.toggle("rotate-sidebar-toggle-btn");
-  // sidebarText.classList.toggle("hideSidebar-text");
-  //   linkItem.style.width = "fit-content";
   toggleSideBar();
+  toggleLogoName();
 });
 
 const sidebarAccountLink = document.querySelector(".sidebar-account-link");
@@ -57,4 +57,7 @@ function toggleSidebarTotifications() {
   SidebarNotificationContainer.classList.toggle(
     "toggle-sidebar-notification-container"
   );
+}
+function toggleLogoName() {
+  logoName.classList.toggle("toggle-logo-name");
 }

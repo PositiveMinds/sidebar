@@ -35,6 +35,8 @@ header {
   height: 3rem;
   background: var(--white);
   box-shadow: 0 0 3px 0 rgba(0, 0, 0, 0.125);
+  display: flex;
+  align-items: center;
 }
 /* ================sidebar design======================= */
 .sidebar {
@@ -90,6 +92,11 @@ header {
   display: flex;
   margin-left: 0.5rem;
   font-size: 1.2rem;
+}
+
+.toggle-logo-name {
+  opacity: 0;
+  visibility: hidden;
 }
 .sidebar .sidebar-top .sidebar-toggle-btn {
   width: 2rem;
@@ -179,6 +186,30 @@ header {
 }
 .sidebar-notifications {
   position: relative;
+}
+.sidebar-notifications .notifications-heading {
+  display: flex;
+  align-items: center;
+}
+.sidebar-notifications .notifications-heading i {
+  display: flex;
+  align-items: center;
+  border-radius: 50%;
+  /* background: var(--orange-transparent); */
+  margin-right: 0.5rem;
+  position: relative;
+  z-index: 1;
+}
+.sidebar-notifications .notifications-heading i::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  left: 0;
+  top: 0;
+  border: 1px solid var(--pink);
+  z-index: -1;
 }
 .sidebar-notification-container {
   position: absolute;
