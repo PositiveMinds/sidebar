@@ -9,7 +9,10 @@
   --bg-color: rgba(247, 247, 247, 1);
   --grey: #999;
   --orange: rgba(233, 165, 14, 1);
+  --dark-orange: rgba(255, 87, 0, 1);
   --orange-transparent: rgba(233, 165, 14, 0.125);
+  --dark-blue: rgba(0, 14, 75, 1);
+  --pink: rgba(204, 17, 119, 1);
 
   --sidebar-width: 250px;
 
@@ -33,15 +36,14 @@ body {
 }
 
 /* =====================header design========================== */
-
 header {
   width: 100%;
   height: 3rem;
-  background: var(--dark);
+  background: var(--white);
+  box-shadow: 0 0 3px 0 rgba(0, 0, 0, 0.125);
 }
 
 /* ================sidebar design======================= */
-
 .sidebar {
   position: fixed;
   top: 0;
@@ -54,8 +56,8 @@ header {
   padding: 1rem 0.5rem;
   transition: var(--transition);
   z-index: 1000;
+  /* display: none; */
 }
-
 .full-width {
   width: var(--sidebar-width);
 }
@@ -70,6 +72,9 @@ header {
   height: 1rem;
 }
 
+.rotate-sidebar-toggle-btn {
+  transform: rotate(180deg);
+}
 .sidebar .sidebar-top .logo-text-img {
   background: var(--purple);
   display: grid;
@@ -78,13 +83,13 @@ header {
   height: 2.5rem;
   border-radius: 3px;
   color: var(--white);
-  font-size: 1rem;
+  font-size: 1.5rem;
   letter-spacing: -0.3rem;
   font-weight: 800;
 }
-
 .commonHidden {
-  display: none;
+  opacity: 0;
+  visibility: hidden;
 }
 .sidebar .sidebar-top img {
   width: 100%;
@@ -111,7 +116,6 @@ header {
 }
 
 /* ================sidebar-content================== */
-
 .sidebar-content .links {
   display: flex;
   flex-direction: column;
@@ -120,8 +124,8 @@ header {
   position: relative;
   display: flex;
 }
-
 .sidebar-content .links .link-item a {
+  /* position: relative; */
   display: flex;
   width: 100%;
   /* width: 2.5rem; */
@@ -131,12 +135,36 @@ header {
   color: var(--dark);
   margin: 0.5rem 0;
   white-space: nowrap;
-  overflow-x: hidden;
-  position: relative;
+  /* overflow-x: hidden;
+  position: relative; */
 }
-.sidebar-content .links .link-item > a:hover {
+
+.dashboardActiveLink {
+  border-right: 1px solid var(--purple);
+}
+
+.hideSidebar-text {
+  opacity: 0;
+  visibility: hidden;
+}
+
+.sidebar-notication-count {
+  position: absolute;
+  top: 0;
+  left: 0.525rem;
+  font-size: 0.6rem;
+  display: grid;
+  place-items: center;
+  background: var(--orange);
+  border-radius: 50%;
+  width: fit-content;
+  padding: 0.2rem;
+  font-weight: 600;
+}
+
+.sidebar-content .links .link-item .common-style:hover {
   background: var(--orange-transparent);
-  color: var(--orange);
+  /* color: var(--purple); */
 }
 .sidebar-content .links .link-item a i {
   width: 2.5rem;
@@ -167,8 +195,126 @@ header {
   z-index: -1;
 }
 
+.sidebar-notifications {
+  position: relative;
+}
+
+.sidebar-notification-container {
+  position: absolute;
+  right: 280px;
+  bottom: 0;
+  width: 300px;
+  height: fit-content;
+  border-radius: 8px;
+  background: var(--white);
+  box-shadow: 0 0 6px 0 rgba(0, 0, 0, 0.125);
+  padding: 1rem;
+  transition: all 500ms ease-in-out;
+  z-index: -1;
+}
+
+.toggle-sidebar-notification-container {
+  right: -320px;
+  z-index: -1;
+  animation-name: settings-container;
+  animation-duration: 1s;
+}
+.notification-activity {
+  display: grid;
+  align-items: center;
+  grid-template-columns: 1fr 75% 1fr;
+  margin: 1rem 0;
+}
+
+.notification-activity:not(:last-of-type) {
+  border-bottom: 1px solid var(--orange-transparent);
+}
+.notification-activity .notification-text {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.notification-activity .contact-name,
+.notification-activity .activity-name {
+  font-size: 0.8rem;
+  color: var(--dark-blue);
+  font-weight: 500;
+}
+
+.activity-icon {
+  color: var(--pink);
+  width: 2rem;
+  height: 2rem;
+  background: var(--orange-transparent);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.notification-activity .notification-type {
+  font-size: 0.8rem;
+  color: var(--grey);
+}
+.notification-activity .contact-photo {
+  width: 2rem;
+  height: 2rem;
+  /* overflow: hidden; */
+  border-radius: 50%;
+  margin-right: 0.5rem;
+  position: relative;
+}
+.notification-activity .contact-photo .online-status {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+
+  position: absolute;
+  bottom: 0.2rem;
+  left: 1.6rem;
+}
+.notification-activity .contact-photo .online-status.user-active {
+  background: #00b894;
+  border: 1px solid var(--white);
+}
+.notification-activity .contact-photo .online-status.user-offline {
+  background: var(--grey);
+  border: 1px solid var(--white);
+}
+
+.notification-activity img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+}
+.notification-activity .like-button {
+  color: var(--orange);
+  transform: rotateY(180deg);
+}
+.notification-activity .comment-icon {
+  color: var(--purple);
+}
+
+.photo-icon {
+  width: 2rem;
+  height: 2rem;
+  overflow: hidden;
+}
+.photo-icon img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
 .user-settings-container a {
   transition: var(--transition);
+}
+
+.sidebar-account-settings {
+  margin-left: 1rem;
+}
+
+.sidebar-account-settings-hidden {
+  display: none;
 }
 .sidebar-account {
   right: -270px;
@@ -234,7 +380,11 @@ header {
 
 .user-settings-container .user-profile-links a:hover {
   background: var(--orange-transparent);
-  color: var(--orange);
+  /* color: var(--orange); */
+}
+
+.user-settings-container .user-profile-links i {
+  color: var(--dark-orange);
 }
 
 .sidebar-heading {
@@ -249,4 +399,36 @@ header {
 .show-sidebar-heading {
   opacity: 1;
   visibility: visible;
+}
+
+/* main-wrapper============================================== */
+
+.main-wrapper {
+  width: 93%;
+  max-width: 1440px;
+  margin: 1rem auto;
+}
+.main-wrapper .dashboard-top {
+  width: 100%;
+  height: fit-content;
+  background: var(--white);
+  padding: 1rem;
+  box-shadow: 0 0 1px 0 rgba(0, 0, 0, 0.125);
+}
+.main-wrapper .dashboard-top .content {
+  display: flex;
+}
+.main-wrapper .dashboard-top .content .dashboard-icon {
+  width: 3rem;
+  height: 3rem;
+  background: var(--orange-transparent);
+  display: grid;
+  place-items: center;
+  font-size: 2rem;
+}
+.main-wrapper .dashboard-top .content .dashboard-heading {
+  font-size: 2rem;
+  text-transform: uppercase;
+  margin-left: 1rem;
+  font-weight: 700;
 }
