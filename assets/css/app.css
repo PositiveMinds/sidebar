@@ -59,6 +59,12 @@ header {
   align-items: center;
   position: relative;
 }
+.sidebar .sidebar-top .letter-c {
+  color: var(--pink);
+}
+.sidebar .sidebar-top .letter-s {
+  color: var(--orange);
+}
 .small-logo-size {
   font-size: 0.9rem;
   width: 1rem;
@@ -68,7 +74,6 @@ header {
   transform: rotate(180deg);
 }
 .sidebar .sidebar-top .logo-text-img {
-  background: var(--purple);
   display: grid;
   place-items: center;
   width: 2.5rem;
@@ -76,8 +81,9 @@ header {
   border-radius: 3px;
   color: var(--white);
   font-size: 1.5rem;
-  letter-spacing: -0.3rem;
+  letter-spacing: -0.5rem;
   font-weight: 800;
+  box-shadow: 0 0 3px 0 rgba(0, 0, 0, 0.125);
 }
 .commonHidden {
   opacity: 0;
@@ -195,22 +201,12 @@ header {
   display: flex;
   align-items: center;
   border-radius: 50%;
-  /* background: var(--orange-transparent); */
   margin-right: 0.5rem;
   position: relative;
   z-index: 1;
+  color: var(--pink);
 }
-.sidebar-notifications .notifications-heading i::after {
-  content: "";
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  border-radius: 50%;
-  left: 0;
-  top: 0;
-  border: 1px solid var(--pink);
-  z-index: -1;
-}
+
 .sidebar-notification-container {
   position: absolute;
   right: 280px;
