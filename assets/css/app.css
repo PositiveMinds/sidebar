@@ -139,6 +139,12 @@ header {
   position: relative; */
 }
 
+.sidebar-content .separator {
+  height: 1px;
+  background: var(--orange-transparent);
+  margin: 1rem 0;
+}
+
 .dashboardActiveLink {
   border-right: 1px solid var(--purple);
 }
@@ -212,6 +218,17 @@ header {
   transition: all 500ms ease-in-out;
   z-index: -1;
 }
+
+/* .sidebar-notification-container::before {
+  position: absolute;
+  left: -1rem;
+  bottom: 1rem;
+  content: "";
+  border-top: 8px solid transparent;
+  border-bottom: 8px solid transparent;
+  border-left: 8px solid transparent;
+  border-right: 8px solid var(--white);
+} */
 
 .toggle-sidebar-notification-container {
   right: -320px;
@@ -367,7 +384,8 @@ header {
   font-weight: 200;
   font-size: 0.7rem;
 }
-.user-settings-container::before {
+.user-settings-container::before,
+.sidebar-notification-container::before {
   position: absolute;
   left: -1rem;
   bottom: 1rem;
@@ -380,11 +398,11 @@ header {
 
 .user-settings-container .user-profile-links a:hover {
   background: var(--orange-transparent);
-  /* color: var(--orange); */
+  color: var(--pink);
 }
 
 .user-settings-container .user-profile-links i {
-  color: var(--dark-orange);
+  /* color: var(--pink); */
 }
 
 .sidebar-heading {
@@ -399,6 +417,7 @@ header {
 .show-sidebar-heading {
   opacity: 1;
   visibility: visible;
+  color: var(--light-grey);
 }
 
 /* main-wrapper============================================== */
