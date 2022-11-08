@@ -12,7 +12,34 @@
     <link rel="stylesheet" href="assets/css/app.css" />
   </head>
   <body>
-    <header></header>
+    <input type="checkbox" id="toggle-theme" />
+    <header>
+      <div class="header-content">
+        <form class="search-form">
+          <input type="search" class="search-input" placeholder="Search" />
+          <button class="search-btn"><i class="bx bx-search"></i></button>
+        </form>
+        <div class="header-right">
+          <div class="toggle-dark-mode-box">
+            <label for="toggle-theme" class="toggle-theme"></label>
+          </div>
+          <div class="notification-box">
+            <span class="notification-content">
+              <i class="bx bxs-bell"> </i>
+              <span class="header-notification-counter"
+                ><span class="counter">25</span></span
+              >
+            </span>
+          </div>
+          <div class="logout-box">
+            <span class="logout-icon"
+              ><i class="bx bx-log-out-circle"></i
+            ></span>
+            <span class="logout-text">Logout</span>
+          </div>
+        </div>
+      </div>
+    </header>
     <!-- =========header ends -->
 
     <div class="sidebar">
@@ -245,12 +272,104 @@
     <!-- =========sidebar ends -->
 
     <main class="main-wrapper">
-      <div class="dashboard-top">
-        <div class="content">
-          <div class="dashboard-icon"><i class="bx bxs-grid-alt"></i></div>
-          <div class="dashboard-heading">dashboard</div>
+      <section class="dashboard-sections">
+        <div class="dashboard-left">
+          <div class="dashboard-top-cards">
+            <div class="box-card">
+              <div class="card-icon">
+                <span class="circle">
+                  <i class="bx bx-trending-up"></i>
+                </span>
+              </div>
+              <div class="description">
+                <h3 class="card-heading">Total Sales</h3>
+                <span class="small-text-sales">+50% Incomes</span>
+              </div>
+              <div class="sales-big-text">UGX 278m</div>
+            </div>
+            <!-- =========box-card ends -->
+            <div class="box-card">
+              <div class="card-icon">
+                <span class="circle">
+                  <!-- <i class="bx bx-trending-up"></i> -->
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="16"
+                    height="16"
+                    fill="currentColor"
+                    class="bi bi-bag-fill"
+                    viewBox="0 0 16 16"
+                  >
+                    <path
+                      d="M8 1a2.5 2.5 0 0 1 2.5 2.5V4h-5v-.5A2.5 2.5 0 0 1 8 1zm3.5 3v-.5a3.5 3.5 0 1 0-7 0V4H1v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V4h-3.5z"
+                    />
+                  </svg>
+                </span>
+              </div>
+              <div class="description">
+                <h3 class="card-heading">Daily Sales</h3>
+                <span class="small-text-sales">+13% Sales</span>
+              </div>
+              <div class="sales-big-text">UGX 421K</div>
+            </div>
+            <!-- =========box-card ends -->
+            <div class="box-card">
+              <div class="card-icon">
+                <span class="circle">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="16"
+                    height="16"
+                    fill="currentColor"
+                    class="bi bi-people"
+                    viewBox="0 0 16 16"
+                  >
+                    <path
+                      d="M15 14s1 0 1-1-1-4-5-4-5 3-5 4 1 1 1 1h8zm-7.978-1A.261.261 0 0 1 7 12.996c.001-.264.167-1.03.76-1.72C8.312 10.629 9.282 10 11 10c1.717 0 2.687.63 3.24 1.276.593.69.758 1.457.76 1.72l-.008.002a.274.274 0 0 1-.014.002H7.022zM11 7a2 2 0 1 0 0-4 2 2 0 0 0 0 4zm3-2a3 3 0 1 1-6 0 3 3 0 0 1 6 0zM6.936 9.28a5.88 5.88 0 0 0-1.23-.247A7.35 7.35 0 0 0 5 9c-4 0-5 3-5 4 0 .667.333 1 1 1h4.216A2.238 2.238 0 0 1 5 13c0-1.01.377-2.042 1.09-2.904.243-.294.526-.569.846-.816zM4.92 10A5.493 5.493 0 0 0 4 13H1c0-.26.164-1.03.76-1.724.545-.636 1.492-1.256 3.16-1.275zM1.5 5.5a3 3 0 1 1 6 0 3 3 0 0 1-6 0zm3-2a2 2 0 1 0 0 4 2 2 0 0 0 0-4z"
+                    />
+                  </svg>
+                </span>
+              </div>
+              <div class="description">
+                <h3 class="card-heading">Daily Users</h3>
+                <span class="small-text-sales">+48% New User</span>
+              </div>
+              <div class="sales-big-text">4215</div>
+            </div>
+            <!-- =========box-card ends -->
+            <div class="box-card">
+              <div class="card-icon">
+                <span class="circle">
+                  <i class="bx bx-cart-alt"></i>
+                </span>
+              </div>
+              <div class="description">
+                <h3 class="card-heading">Product</h3>
+                <span class="small-text-sales">+25% New Product</span>
+              </div>
+              <div class="sales-big-text">548</div>
+            </div>
+            <!-- =========box-card ends -->
+            <div class="box-card">
+              <div class="card-icon">
+                <span class="circle">
+                  <i class="bx bxs-pie-chart-alt-2"></i>
+                </span>
+              </div>
+              <div class="description">
+                <h3 class="card-heading">Expenses</h3>
+                <span class="small-text-sales">Target Expenses</span>
+              </div>
+              <div class="sales-big-text">UGX 200K</div>
+            </div>
+            <!-- =========box-card ends -->
+          </div>
         </div>
-      </div>
+        <!-- =========dashboard-left ends -->
+        <div class="dashboard-right"></div>
+        <!-- =========dashboard-right ends -->
+      </section>
+      <!-- =========section ends -->
     </main>
 
     <script src="assets/js/app.js"></script>

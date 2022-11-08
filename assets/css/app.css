@@ -1,19 +1,22 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap");
 :root {
   --light-grey: rgba(58, 59, 61, 1);
+  --very-light-grey: rgba(239, 243, 252, 1);
   --dark: rgba(36, 37, 39, 1);
   --white: rgba(255, 255, 255, 1);
   --purple: rgba(104, 92, 254, 1);
   --cream: rgba(246, 244, 255, 1);
-  --bg-color: rgba(247, 247, 247, 1);
+  --bg-color: rgba(242, 245, 254, 1);
   --grey: #999;
   --orange: rgba(233, 165, 14, 1);
   --dark-orange: rgba(255, 87, 0, 1);
   --orange-transparent: rgba(233, 165, 14, 0.125);
   --dark-blue: rgba(0, 14, 75, 1);
   --pink: rgba(204, 17, 119, 1);
+  --blood-red: rgba(255, 116, 87, 1);
   --sidebar-width: 250px;
   --transition: all 300ms ease-in-out;
+  --card-light-pink: rgba(255, 245, 244, 1);
 }
 body {
   font-family: "Poppins", sans-serif;
@@ -32,10 +35,135 @@ body {
 /* =====================header design========================== */
 header {
   width: 100%;
-  height: 3rem;
+  height: 4rem;
   background: var(--white);
   box-shadow: 0 0 3px 0 rgba(0, 0, 0, 0.125);
   display: flex;
+  align-items: center;
+}
+header .header-content {
+  width: 93%;
+  max-width: 1440px;
+  margin: 1rem auto;
+  display: grid;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+header .header-content .header-right {
+  display: flex;
+  justify-content: space-between;
+}
+
+header .header-content .header-right > div:nth-of-type(2) {
+  margin: 0 2rem;
+}
+header .header-content .search-form {
+  width: fit-conten;
+  height: fit-content;
+  background: var(--very-light-grey);
+  position: relative;
+  border-radius: 8px;
+}
+header .header-content .search-form .search-input {
+  width: 100%;
+  padding: 0.5rem 3rem 0.5rem 1rem;
+  background: transparent;
+  border: 0;
+}
+header .header-content .search-form .search-input:focus {
+  outline: none;
+}
+header .header-content .search-form .search-btn {
+  position: absolute;
+  right: 0;
+  width: 2rem;
+  height: 100%;
+  font-size: 1.3rem;
+  border: 0;
+  background: transparent;
+  color: var(--grey);
+  cursor: pointer;
+}
+
+.toggle-dark-mode-box {
+  width: fit-content;
+  display: flex;
+  align-items: center;
+}
+#toggle-theme {
+  display: none;
+}
+.toggle-dark-mode-box .toggle-theme {
+  display: flex;
+  width: 40px;
+  height: 8px;
+  border-radius: 25px;
+  background: var(--very-light-grey);
+  position: relative;
+  cursor: pointer;
+}
+.toggle-dark-mode-box .toggle-theme::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 1.3rem;
+  height: 1.3rem;
+  border-radius: 50%;
+  background: var(--white);
+  box-shadow: 0 0 8px 0 rgba(0, 0, 0, 0.125);
+}
+
+#toggle-theme:checked ~ header .toggle-theme::before {
+  left: 50%;
+}
+#toggle-theme:checked ~ header .toggle-dark-mode-box .toggle-theme {
+  background: var(--orange);
+}
+
+header .notification-box {
+  width: 2rem;
+  height: 2rem;
+  background: var(--very-light-grey);
+  border-radius: 8px;
+  display: grid;
+  place-items: center;
+  font-size: 1.4rem;
+  cursor: pointer;
+}
+header .notification-box .notification-content {
+  position: relative;
+}
+header .notification-box .header-notification-counter {
+  position: absolute;
+  top: 0.015rem;
+  left: 0.5rem;
+  font-size: 0.7rem;
+  width: 1.2rem;
+  height: 1.2rem;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  background: var(--orange);
+  border: 1px solid var(--white);
+}
+
+header .logout-box {
+  width: fit-content;
+  display: flex;
+  align-items: center;
+  background: var(--very-light-grey);
+  border-radius: 8px;
+  padding: 0 0.5rem;
+  cursor: pointer;
+}
+header .logout-box .logout-icon {
+  margin-right: 0.5rem;
+  font-size: 1.5rem;
+  color: var(--pink);
+  display: grid;
   align-items: center;
 }
 /* ================sidebar design======================= */
@@ -397,27 +525,73 @@ header {
   max-width: 1440px;
   margin: 1rem auto;
 }
-.main-wrapper .dashboard-top {
+
+.dashboard-sections {
+  display: grid;
+  grid-template-columns: repeat(2, 70%, 1fr);
+  column-gap: 1rem;
   width: 100%;
-  height: fit-content;
-  background: var(--white);
-  padding: 1rem;
-  box-shadow: 0 0 1px 0 rgba(0, 0, 0, 0.125);
+  /* background-color: red; */
 }
-.main-wrapper .dashboard-top .content {
+
+.dashboard-sections .dashboard-left .dashboard-top-cards {
+  /* max-width: 1200px; */
+  /* margin: 0 auto; */
+  /* display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); */
   display: flex;
 }
-.main-wrapper .dashboard-top .content .dashboard-icon {
-  width: 3rem;
-  height: 3rem;
-  background: var(--orange-transparent);
+.dashboard-sections .dashboard-left .box-card {
+  background: var(--card-light-pink);
+  width: 150px;
+  padding: 1.5rem 1rem;
+  border-radius: 6px;
+}
+.dashboard-sections .dashboard-left .box-card:not(:first-of-type) {
+  margin: 0 1rem;
+}
+.dashboard-sections .dashboard-left .box-card .card-icon {
+  width: 4.5rem;
+  height: 4.5rem;
+  border-radius: 50%;
   display: grid;
   place-items: center;
-  font-size: 2rem;
+  background: var(--white);
+  margin-bottom: 2rem;
+  margin: 0 auto;
 }
-.main-wrapper .dashboard-top .content .dashboard-heading {
-  font-size: 2rem;
-  text-transform: uppercase;
-  margin-left: 1rem;
+.dashboard-sections .dashboard-left .box-card .card-icon .sales-icon {
+  fill: red;
+}
+.dashboard-sections .dashboard-left .box-card .card-icon .circle {
+  width: 4rem;
+  height: 4rem;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  background-color: var(--blood-red);
+  font-size: 2.4rem;
+  color: var(--white);
+}
+.dashboard-sections .dashboard-left .box-card .card-heading {
+  color: var(--dark-blue);
+  font-size: 1rem;
+  text-align: center;
+}
+.dashboard-sections .dashboard-left .box-card .small-text-sales {
+  font-size: 0.8rem;
+  color: var(--grey);
+  text-align: center;
+
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+.dashboard-sections .dashboard-left .box-card .sales-big-text {
+  font-size: 1.4rem;
   font-weight: 700;
+  color: var(--blood-red);
+  margin-top: 1rem;
+  text-align: center;
 }
