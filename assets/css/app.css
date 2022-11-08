@@ -765,12 +765,16 @@ tbody tr td img {
 }
 
 .dashboard-sections .dashboard-right .toggle-right-side-card-btn {
-  width: fit-content;
+  width: 100%;
   background: var(--white);
   padding: 0.5rem 1rem;
   cursor: pointer;
   border: 0;
   text-transform: capitalize;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 1rem;
 }
 
 .dashboard-sections .dashboard-right .dashboard-right-top-card {

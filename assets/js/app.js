@@ -19,6 +19,7 @@ const dashboardRightTopCard = document.querySelector(
 const dashboardRightDefaultVisibleCards = document.querySelector(
   ".dashboard-right-default-visible-cards"
 );
+const notificationBox = document.querySelector(".notification-box");
 
 // EVENTS========================================================
 const sidebarAccountSettings = document.querySelector(
@@ -58,6 +59,10 @@ toggleRightSideCardBtn.addEventListener("click", () => {
   hidetoggleDashboardRightVisibleCards();
 });
 
+notificationBox.addEventListener("click", () => {
+  toggleSidebarTotifications();
+});
+
 // functions================================
 function toggleSideBar() {
   sidebarText.forEach((el) => {
@@ -85,6 +90,24 @@ function toggleLogoName() {
 }
 
 function toggleRightSideCard() {
+  const changeText = "View contacts";
+
+  if (
+    toggleRightSideCardBtn.textContent
+      .toLowerCase()
+      .includes(changeText.toLowerCase())
+  ) {
+    toggleRightSideCardBtn.innerHTML = `
+    <button class="toggle-right-side-card-btn">
+         Back<i class='bx bx-arrow-back'></i>
+    </button>`;
+  } else {
+    toggleRightSideCardBtn.innerHTML = `
+    <button class="toggle-right-side-card-btn">
+        View Contacts <i class="bx bxs-chevron-right"></i>
+    </button>
+    `;
+  }
   dashboardRightContactCard.classList.toggle("toggle-contact-card");
 }
 function hidetoggleDashboardRightVisibleCards() {
