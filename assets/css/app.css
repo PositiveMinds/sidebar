@@ -1,22 +1,33 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap");
 :root {
   --light-grey: rgba(58, 59, 61, 1);
-  --very-light-grey: rgba(239, 243, 252, 1);
+  --very-light-grey: rgba(226, 229, 251, 1);
   --dark: rgba(36, 37, 39, 1);
   --white: rgba(255, 255, 255, 1);
-  --purple: rgba(104, 92, 254, 1);
+
+  --purple: rgba(110, 0, 255, 1);
+  --purple-light: rgba(110, 0, 255, 0.425);
+
+  --dark-purple: rgba(68, 97, 240, 1);
+  --dark-purple-light: rgba(68, 97, 240, 0.425);
+
   --cream: rgba(246, 244, 255, 1);
   --bg-color: rgba(242, 245, 254, 1);
   --grey: #999;
-  --orange: rgba(233, 165, 14, 1);
+  --orange: rgba(255, 159, 28, 1);
+  --orange-light: rgba(255, 159, 28, 0.425);
   --dark-orange: rgba(255, 87, 0, 1);
   --orange-transparent: rgba(233, 165, 14, 0.125);
   --dark-blue: rgba(0, 14, 75, 1);
   --pink: rgba(204, 17, 119, 1);
   --blood-red: rgba(255, 116, 87, 1);
+  --blood-red-light: rgba(255, 116, 87, 0.425);
   --sidebar-width: 250px;
   --transition: all 300ms ease-in-out;
   --card-light-pink: rgba(255, 245, 244, 1);
+  --sidebar-main-color: rgba(56, 72, 132, 1);
+  --green: rgba(45, 168, 142, 1);
+  --green-light: rgba(45, 168, 142, 0.425);
 }
 body {
   font-family: "Poppins", sans-serif;
@@ -64,6 +75,7 @@ header .header-content .search-form {
   background: var(--very-light-grey);
   position: relative;
   border-radius: 8px;
+  overflow: hidden;
 }
 header .header-content .search-form .search-input {
   width: 100%;
@@ -81,8 +93,9 @@ header .header-content .search-form .search-btn {
   height: 100%;
   font-size: 1.3rem;
   border: 0;
-  background: transparent;
-  color: var(--grey);
+  /* background: transparent; */
+  background: var(--purple);
+  color: rgba(255, 255, 255, 0.725);
   cursor: pointer;
 }
 
@@ -447,7 +460,7 @@ header .logout-box .logout-icon {
   animation-name: settings-container;
   animation-duration: 4s;
 }
-@keyframes settings-container {
+/* @keyframes settings-container {
   0% {
     opacity: 0.5;
   }
@@ -462,7 +475,7 @@ header .logout-box .logout-icon {
     opacity: 1;
     height: fit-content;
   }
-}
+} */
 .user-settings-container .user-photo-name {
   display: flex;
   align-items: center;
@@ -528,60 +541,119 @@ header .logout-box .logout-icon {
 
 .dashboard-sections {
   display: grid;
-  grid-template-columns: repeat(2, 70%, 1fr);
+  grid-template-columns: 70% 1fr;
   column-gap: 1rem;
   width: 100%;
   /* background-color: red; */
 }
+.dashboard-sections .dashboard-left-container {
+  /* display: grid;
+  grid-template-columns: 70% 1fr;
+  column-gap: 1rem;
+  width: 100%; */
+  height: 100%;
+  position: relative;
+  overflow-y: auto;
+  /* background-color: red; */
+}
 
 .dashboard-sections .dashboard-left .dashboard-top-cards {
-  /* max-width: 1200px; */
-  /* margin: 0 auto; */
-  /* display: grid;
+  display: grid;
   gap: 1rem;
-  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); */
-  display: flex;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
 }
 .dashboard-sections .dashboard-left .box-card {
-  background: var(--card-light-pink);
-  width: 150px;
+  /* width: 150px; */
   padding: 1.5rem 1rem;
   border-radius: 6px;
+  cursor: pointer;
 }
-.dashboard-sections .dashboard-left .box-card:not(:first-of-type) {
-  margin: 0 1rem;
+.dashboard-sections .dashboard-left .box-card:nth-of-type(1) {
+  background: var(--orange);
 }
+
+.dashboard-sections .dashboard-left .box-card:nth-of-type(2) {
+  background: var(--dark-purple);
+}
+.dashboard-sections .dashboard-left .box-card:nth-of-type(3) {
+  background: var(--blood-red);
+}
+.dashboard-sections .dashboard-left .box-card:nth-of-type(4) {
+  background: var(--green);
+}
+.dashboard-sections .dashboard-left .box-card:nth-of-type(5) {
+  background: var(--purple);
+}
+
+.dashboard-sections
+  .dashboard-left
+  .box-card:nth-of-type(1)
+  .card-icon
+  .circle {
+  background: var(--orange-light);
+}
+
+.dashboard-sections
+  .dashboard-left
+  .box-card:nth-of-type(2)
+  .card-icon
+  .circle {
+  background: var(--dark-purple-light);
+}
+
+.dashboard-sections
+  .dashboard-left
+  .box-card:nth-of-type(3)
+  .card-icon
+  .circle {
+  background: var(--blood-red-light);
+}
+.dashboard-sections
+  .dashboard-left
+  .box-card:nth-of-type(4)
+  .card-icon
+  .circle {
+  background: var(--green-light);
+}
+.dashboard-sections
+  .dashboard-left
+  .box-card:nth-of-type(5)
+  .card-icon
+  .circle {
+  background: var(--purple-light);
+}
+
 .dashboard-sections .dashboard-left .box-card .card-icon {
   width: 4.5rem;
   height: 4.5rem;
   border-radius: 50%;
-  display: grid;
-  place-items: center;
   background: var(--white);
   margin-bottom: 2rem;
   margin: 0 auto;
+  position: relative;
 }
-.dashboard-sections .dashboard-left .box-card .card-icon .sales-icon {
-  fill: red;
-}
+
 .dashboard-sections .dashboard-left .box-card .card-icon .circle {
-  width: 4rem;
-  height: 4rem;
+  width: 95%;
+  height: 95%;
   border-radius: 50%;
   display: grid;
   place-items: center;
-  background-color: var(--blood-red);
   font-size: 2.4rem;
   color: var(--white);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 .dashboard-sections .dashboard-left .box-card .card-heading {
-  color: var(--dark-blue);
+  color: rgba(255, 255, 255, 0.625);
   font-size: 1rem;
   text-align: center;
 }
 .dashboard-sections .dashboard-left .box-card .small-text-sales {
   font-size: 0.8rem;
-  color: var(--grey);
+  color: var(--white);
   text-align: center;
 
   width: 100%;
@@ -589,9 +661,21 @@ header .logout-box .logout-icon {
   justify-content: center;
 }
 .dashboard-sections .dashboard-left .box-card .sales-big-text {
-  font-size: 1.4rem;
+  font-size: 1.2rem;
   font-weight: 700;
-  color: var(--blood-red);
   margin-top: 1rem;
   text-align: center;
+}
+
+.dashboard-sections .dashboard-left .box-card:nth-of-type(1) .sales-big-text,
+.dashboard-sections .dashboard-left .box-card:nth-of-type(2) .sales-big-text,
+.dashboard-sections .dashboard-left .box-card:nth-of-type(3) .sales-big-text,
+.dashboard-sections .dashboard-left .box-card:nth-of-type(4) .sales-big-text,
+.dashboard-sections .dashboard-left .box-card:nth-of-type(5) .sales-big-text {
+  color: var(--white);
+}
+
+/* =============dashboard-right============================ */
+.dashboard-sections .dashboard-right {
+  background-color: red;
 }
