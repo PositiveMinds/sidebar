@@ -51,6 +51,9 @@ header {
   box-shadow: 0 0 3px 0 rgba(0, 0, 0, 0.125);
   display: flex;
   align-items: center;
+  position: sticky;
+  top: 0;
+  z-index: 99;
 }
 header .header-content {
   width: 93%;
@@ -541,7 +544,7 @@ header .logout-box .logout-icon {
 
 .dashboard-sections {
   display: grid;
-  grid-template-columns: 70% 1fr;
+  grid-template-columns: 80% 1fr;
   column-gap: 1rem;
   width: 100%;
   /* background-color: red; */
@@ -551,7 +554,7 @@ header .logout-box .logout-icon {
   grid-template-columns: 70% 1fr;
   column-gap: 1rem;
   width: 100%; */
-  height: 100%;
+  max-height: 800px;
   position: relative;
   overflow-y: auto;
   /* background-color: red; */
@@ -675,7 +678,323 @@ header .logout-box .logout-icon {
   color: var(--white);
 }
 
+/* ORDERS TABLE STYLES=========================================== */
+
+.orders-table {
+  border-spacing: 1;
+  border-collapse: collapse;
+  background: white;
+  border-radius: 6px;
+  overflow: hidden;
+  /* max-width: 800px; */
+  width: 100%;
+  /* margin: 1rem auto; */
+  position: relative;
+}
+
+.table-wrapper {
+  background: var(--white);
+  margin: 1rem 0;
+  border-radius: 6px;
+}
+
+.orders-table-heading {
+  display: flex;
+}
+
+.orders-table-heading-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem 1rem;
+}
+.orders-table-heading-top .table-action-btn {
+  width: 2rem;
+  height: 2rem;
+  display: grid;
+  place-items: center;
+  background: var(--white);
+  box-shadow: 0 0 3px 0 rgba(0, 0, 0, 0.125);
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+* {
+  position: relative;
+}
+
+td,
+th {
+  padding-left: 8px;
+  text-align: left;
+}
+
+thead tr {
+  height: 60px;
+  background: var(--purple);
+  font-size: 16px;
+  cursor: pointer;
+  color: rgba(255, 255, 255, 0.625);
+}
+
+tbody tr {
+  height: 48px;
+  border-bottom: 1px solid var(--very-light-grey);
+  font-size: 0.9rem;
+  color: var(--dark-blue);
+}
+tbody tr td img {
+  height: 48px;
+  width: 48px;
+  /* border-bottom: 1px solid #e3f1d5; */
+}
+
 /* =============dashboard-right============================ */
-.dashboard-sections .dashboard-right {
-  background-color: red;
+.dashboard-sections .dashboard-right .dashboard-right-container {
+  width: 100%;
+  height: 100%;
+  /* background-color: red; */
+  /* overflow-x: hidden; */
+}
+.dashboard-sections .dashboard-right .dashboard-right-container-inner {
+  position: relative;
+  /* overflow-x: hidden; */
+  height: 100%;
+  width: 100%;
+  margin-top: 1rem;
+}
+
+.dashboard-sections .dashboard-right .toggle-right-side-card-btn {
+  width: fit-content;
+  background: var(--white);
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  border: 0;
+  text-transform: capitalize;
+}
+
+.dashboard-sections .dashboard-right .dashboard-right-top-card {
+  background: var(--white);
+  width: 100%;
+  height: fit-content;
+  padding: 1rem;
+  border-radius: 12px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.dashboard-sections
+  .dashboard-right
+  .dashboard-right-top-card
+  .user-profile-photo {
+  width: 5rem;
+  height: 5rem;
+  overflow: hidden;
+  border-radius: 50%;
+}
+.dashboard-sections
+  .dashboard-right
+  .dashboard-right-top-card
+  .user-profile-photo
+  img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 1px solid var(--orange-transparent);
+  cursor: pointer;
+}
+
+.dashboard-sections
+  .dashboard-right
+  .dashboard-right-top-card
+  .user-card-body
+  .username {
+  color: var(--dark);
+  font-weight: 500;
+  margin-top: 1rem;
+}
+.dashboard-sections .dashboard-right .dashboard-right-top-card .profile-btn {
+  background: var(--purple);
+  margin-top: 2rem;
+  border: 0;
+  padding: 0.5rem 1rem;
+  color: rgba(255, 255, 255, 0.625);
+  font-weight: 600;
+  border-radius: 3px;
+  cursor: pointer;
+  text-transform: capitalize;
+}
+.dashboard-sections
+  .dashboard-right
+  .dashboard-right-top-card
+  .user-card-body
+  .user-title {
+  color: var(--grey);
+  font-weight: 400;
+  font-size: 0.8rem;
+  margin: 0.6rem 0;
+}
+.dashboard-sections
+  .dashboard-right
+  .dashboard-right-top-card
+  .user-card-body
+  .location {
+  color: var(--purple);
+  font-weight: 400;
+  font-size: 0.8rem;
+}
+.dashboard-sections
+  .dashboard-right
+  .dashboard-right-top-card
+  .user-card-body
+  .location-icon {
+  font-size: 0.9rem;
+}
+
+.dashboard-right-contact-card {
+  width: 0;
+  white-space: nowrap;
+  /* overflow: hidden; */
+  position: absolute;
+  right: 0;
+  top: 0;
+  /* padding: 1rem; */
+  /* height: 100%; */
+  /* padding: 1rem 0.5rem; */
+  background: var(--white);
+}
+
+.dashboard-right-contact-card .dashboard-right-contact-card-content {
+  overflow: hidden;
+  max-height: 450px;
+  overflow-y: auto;
+}
+.dashboard-right-contact-card .dashboard-right-contact-card-container {
+  padding: 0 0.5rem;
+}
+.dashboard-right-contact-card .contact-card-heading {
+  padding: 1rem;
+  display: flex;
+}
+.dashboard-right-contact-card .search-contact {
+  background: var(--very-light-grey);
+  width: 100%;
+  position: relative;
+  height: 100%;
+  border-radius: 4px;
+  overflow: hidden;
+}
+.dashboard-right-contact-card .search-contact .search-contact-input {
+  width: 100%;
+  padding: 0.5rem 0.5rem;
+  border: 0;
+  background: transparent;
+}
+.dashboard-right-contact-card .search-contact .search-contact-btn {
+  position: absolute;
+  right: 0;
+  height: 100%;
+  width: 2rem;
+  font-size: 1rem;
+  background: transparent;
+  border: 0;
+  color: rgba(0, 14, 75, 0.4);
+  text-align: center;
+  line-height: 5px;
+}
+
+.toggle-contact-card {
+  /* background: var(--blood-red); */
+  width: 100%;
+  height: fit-content;
+  /* height: fit-content; */
+  border-radius: 12px;
+}
+
+.dashboard-right-contact-card .contact-single {
+  /* background-color: red; */
+  padding: 0.5rem 0;
+  cursor: pointer;
+  display: grid;
+  grid-template-columns: 15% 85%;
+  column-gap: 1rem;
+}
+.dashboard-right-contact-card .contact-single:not(:first-of-type) {
+  border-top: 1px solid var(--orange-transparent);
+}
+.dashboard-right-contact-card .contact-single .contact-photo {
+  position: relative;
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 50%;
+  /* overflow: hidden; */
+  margin-right: 0.5rem;
+}
+.dashboard-right-contact-card .contact-single .contact-photo .contact-status {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  position: absolute;
+  bottom: 0.2rem;
+  right: 0;
+  /* background: var(--green); */
+  border: 1px solid var(--white);
+}
+.dashboard-right-contact-card
+  .contact-single
+  .contact-photo
+  .contact-status-active {
+  background: var(--green);
+}
+.dashboard-right-contact-card .dashboard-right-contact-content {
+  /* height: fit-content; */
+  background: var(--white);
+}
+.dashboard-right-contact-card
+  .contact-single
+  .contact-photo
+  .contact-status-offline {
+  background: var(--green);
+}
+.dashboard-right-contact-card .contact-single .contact-photo img {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+}
+.dashboard-right-contact-card .contact-single .contact-username {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.9rem;
+  color: var(--dark-blue);
+  font-weight: 300;
+  text-transform: capitalize;
+  width: 100%;
+}
+.dashboard-right-contact-card .contact-single .msg-date {
+  font-size: 0.6rem;
+  color: var(--grey);
+  font-weight: 300;
+  text-transform: capitalize;
+}
+.dashboard-right-contact-card .contact-single .msg-contact-msg-content {
+  font-size: 0.7rem;
+  color: var(--grey);
+  font-weight: 300;
+  overflow: hidden;
+  width: 90%;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+.toggle-dashboard-right-visible-cards {
+  opacity: 0;
+  visibility: hidden;
 }

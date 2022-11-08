@@ -1,9 +1,26 @@
+// Declarations=================================================
+
 const sidebarToggle = document.querySelector(".sidebar-toggle");
 const sidebar = document.querySelector(".sidebar");
 const sidebarText = document.querySelectorAll(".sidebar-Text");
 const sidebarHeading = document.querySelector(".sidebar-heading");
 const logoTextImg = document.querySelector(".logo-text-img");
 const logoName = document.querySelector(".logo-name");
+const toggleRightSideCardBtn = document.querySelector(
+  ".toggle-right-side-card-btn"
+);
+
+const dashboardRightContactCard = document.querySelector(
+  ".dashboard-right-contact-card"
+);
+const dashboardRightTopCard = document.querySelector(
+  ".dashboard-right-top-card"
+);
+const dashboardRightDefaultVisibleCards = document.querySelector(
+  ".dashboard-right-default-visible-cards"
+);
+
+// EVENTS========================================================
 const sidebarAccountSettings = document.querySelector(
   ".sidebar-account-settings"
 );
@@ -36,6 +53,11 @@ sidebarNotifications.addEventListener("click", () => {
   toggleSidebarTotifications();
 });
 
+toggleRightSideCardBtn.addEventListener("click", () => {
+  toggleRightSideCard();
+  hidetoggleDashboardRightVisibleCards();
+});
+
 // functions================================
 function toggleSideBar() {
   sidebarText.forEach((el) => {
@@ -60,4 +82,13 @@ function toggleSidebarTotifications() {
 }
 function toggleLogoName() {
   logoName.classList.toggle("toggle-logo-name");
+}
+
+function toggleRightSideCard() {
+  dashboardRightContactCard.classList.toggle("toggle-contact-card");
+}
+function hidetoggleDashboardRightVisibleCards() {
+  dashboardRightDefaultVisibleCards.classList.toggle(
+    "toggle-dashboard-right-visible-cards"
+  );
 }
