@@ -20,6 +20,9 @@ const dashboardRightDefaultVisibleCards = document.querySelector(
   ".dashboard-right-default-visible-cards"
 );
 const notificationBox = document.querySelector(".notification-box");
+const chatBox = document.querySelector(".chat-box");
+const navbarMsgBox = document.querySelector(".navbar-msg-box");
+const closeChatBox = document.querySelector(".close-chat-box");
 
 // EVENTS========================================================
 const sidebarAccountSettings = document.querySelector(
@@ -63,6 +66,14 @@ notificationBox.addEventListener("click", () => {
   toggleSidebarTotifications();
 });
 
+navbarMsgBox.addEventListener("click", () => {
+  hideChatBox();
+  // alert("Hello");
+});
+
+closeChatBox.addEventListener("click", () => {
+  closeChatBoxFunction();
+});
 // functions================================
 function toggleSideBar() {
   sidebarText.forEach((el) => {
@@ -114,4 +125,10 @@ function hidetoggleDashboardRightVisibleCards() {
   dashboardRightDefaultVisibleCards.classList.toggle(
     "toggle-dashboard-right-visible-cards"
   );
+}
+function hideChatBox() {
+  chatBox.classList.remove("hide-chatbox");
+}
+function closeChatBoxFunction() {
+  chatBox.classList.add("hide-chatbox");
 }
