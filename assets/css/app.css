@@ -803,6 +803,9 @@ header .logout-box .logout-icon {
   left: 50%;
   transform: translate(-50%, -50%);
 }
+.dashboard-sections .dashboard-left .box-card .card-icon .circle .trend-icon {
+  font-size: 30px;
+}
 .dashboard-sections .dashboard-left .box-card .card-heading {
   color: rgba(255, 255, 255, 0.625);
   font-size: 1rem;
