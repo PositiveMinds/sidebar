@@ -69,8 +69,9 @@ header .header-content .header-right {
   justify-content: space-between;
 }
 
-header .header-content .header-right > div:nth-of-type(2) {
-  margin: 0 2rem;
+header .header-content .header-right > div:not(:first-of-type),
+header .header-content .header-right > div:not(:last-of-type) {
+  margin-right: 1rem;
 }
 header .header-content .search-form {
   width: fit-conten;
@@ -139,7 +140,8 @@ header .header-content .search-form .search-btn {
   background: var(--orange);
 }
 
-header .notification-box {
+header .notification-box,
+header .navbar-msg-box {
   width: 2rem;
   height: 2rem;
   background: var(--very-light-grey);
@@ -149,10 +151,12 @@ header .notification-box {
   font-size: 1.4rem;
   cursor: pointer;
 }
-header .notification-box .notification-content {
+header .notification-box .notification-content,
+header .notification-box .msg-content {
   position: relative;
 }
-header .notification-box .header-notification-counter {
+header .notification-box .header-notification-counter,
+header .navbar-msg-box .header-msg-counter {
   position: absolute;
   top: 0.015rem;
   left: 0.5rem;
@@ -181,6 +185,9 @@ header .logout-box .logout-icon {
   color: var(--pink);
   display: grid;
   align-items: center;
+}
+
+heaser .navbar-msg-box {
 }
 /* ================sidebar design======================= */
 .sidebar {
