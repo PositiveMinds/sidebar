@@ -558,6 +558,20 @@ header .logout-box .logout-icon {
   position: relative;
   overflow-y: auto;
   /* background-color: red; */
+  position: relative;
+}
+.dashboard-sections .dashboard-left-container .chat-box {
+  position: fixed;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  background: red;
+  z-index: 1000;
+}
+.dashboard-sections .dashboard-left-container .chat-box .chat-box-content {
+  width: 1/1;
+  background: var(--white);
 }
 
 .dashboard-sections .dashboard-left .dashboard-top-cards {
@@ -1020,7 +1034,12 @@ tbody tr td img {
 .dashboard-right-card-box .container .card {
   position: relative;
   width: 100%;
-  background: linear-gradient(0deg, var(--blood-red), var(--orange), #1b1b1b);
+  background: linear-gradient(
+    0deg,
+    var(--blood-red),
+    var(--orange),
+    var(--purple)
+  );
   background: var(--white);
   display: flex;
   justify-content: center;
@@ -1094,7 +1113,7 @@ tbody tr td img {
   transition: 0.5s;
 }
 .dashboard-right-card-box .card:hover .text {
-  color: #fff;
+  color: var(--purple);
 }
 .dashboard-right-card-box svg {
   position: relative;
