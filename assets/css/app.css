@@ -28,6 +28,9 @@
   --sidebar-main-color: rgba(56, 72, 132, 1);
   --green: rgba(45, 168, 142, 1);
   --green-light: rgba(45, 168, 142, 0.425);
+
+  --chat-left: 350px;
+  --chat-box-navbar: 3rem;
 }
 body {
   font-family: "Poppins", sans-serif;
@@ -614,7 +617,11 @@ heaser .navbar-msg-box {
 .dashboard-sections .chat-box .chat-box-content .chat-left {
   background-color: var(--white);
   padding: 0.5rem;
-  width: 100%;
+  width: var(--chat-left);
+  position: absolute;
+  height: 100%;
+  left: 0;
+  top: 0;
 }
 
 .dashboard-sections .dashboard-left-container .new-chat-btn {
@@ -676,9 +683,9 @@ heaser .navbar-msg-box {
 
 .dashboard-sections .chat-left-friends .chat-left-user-single {
   display: grid;
-  grid-template-columns: 1fr 80%;
+  grid-template-columns: 20% 80%;
   cursor: pointer;
-  width: 100%;
+  /* width: 100%; */
   background: var(--white);
   padding: 0.5rem 0.2rem;
   border-radius: 8px;
@@ -737,8 +744,155 @@ heaser .navbar-msg-box {
   font-size: 0.8rem;
   color: var(--grey);
 }
+
+/* Chat right designs================================================= */
+.dashboard-sections .chat-box .chat-box-content .chat-right .chatbox-navbar {
+  height: var(--chat-box-navbar);
+  width: 100%;
+  background: var(--white);
+}
+
 .dashboard-sections .chat-box .chat-box-content .chat-right {
-  background-color: orange;
+  /* background-color: orange; */
+  position: absolute;
+  left: var(--chat-left);
+  width: calc(100% - var(--chat-left));
+}
+.dashboard-sections .chat-box .chat-box-content .chat-right-content {
+  /* margin-top: var(--chat-box-navbar); */
+  /* margin-top: 1rem; */
+  overflow-y: auto;
+  /* height: calc(100% - var(--chat-box-navbar)); */
+  height: 80vh;
+  width: 100%;
+}
+.dashboard-sections .chat-box .chat-right .chat-right-container {
+  /* overflow: hidden; */
+  /* background: #419fd9;
+  background-image: url(https://s-media-cache-ak0.pinimg.com/originals/51/ed/c0/51edc046eb80046ee4755ee71d0f19ca.jpg); */
+  width: 100%;
+  /* height: calc(100% - var(--chat-box-navbar)); */
+  overflow-y: auto;
+  /* position: absolute; */
+}
+
+.message__outer {
+  /* flex: 1; */
+  display: flex;
+  /* flex-direction: row-reverse; */
+  /* background-color: red; */
+  /* background-image: linear-gradient(#faaf00, #ff2e2e); */
+  margin: 1rem;
+}
+.message__outer.msg_sender {
+  /* flex: 1; */
+  display: flex;
+  flex-direction: row-reverse;
+  position: relative;
+  /* background-color: red; */
+  /* background-image: linear-gradient(#faaf00, #ff2e2e); */
+}
+.message__outer.msg_sender .message__status {
+  /* display: flex;
+  align-self: flex-end; */
+  position: absolute;
+  bottom: -0.5rem;
+  border-radius: 50%;
+  background: var(--very-light-grey);
+}
+.message:last-of-type .msg_sender .message__inner {
+  /* background-color: red; */
+}
+
+.message .msg_sender .message__inner {
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+  border-bottom-left-radius: 20px;
+}
+
+.message__inner {
+  position: relative;
+  width: auto;
+  max-width: 45%;
+  height: fit-content;
+  padding: 0.8rem 1rem;
+  margin: 20px 0.6rem;
+  background: #fff;
+  /* border-radius: 7px; */
+  overflow-wrap: break-word;
+}
+/* .message__inner:last-of-type() {
+  position: relative;
+  width: auto;
+  max-width: 45%;
+  height: fit-content;
+  padding: 0.3rem 0.5rem;
+  margin: 20px 0;
+  background: #fff;
+  border-radius: 7px;
+  overflow-wrap: break-word;
+} */
+
+.msg_recipient {
+  /* border-end-end-radius: 10px; */
+  /* border-top-left-radius: 20px; */
+  border-top-right-radius: 20px;
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+}
+
+.message__actions {
+  width: 67px;
+  padding-right: 5px;
+}
+
+.message__spacer {
+  flex: 1;
+}
+.message__bubble {
+}
+
+.message__actions {
+  flex-shrink: 0;
+}
+
+.message__status {
+  width: 20px;
+  height: 20px;
+  background-color: green;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+/* .message__avatar {
+  padding-left: 6px;
+  padding-right: 8px;
+} */
+.message__avatar .avatar {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+}
+
+.message__actions {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 67px;
+  padding-right: 5px;
+}
+
+.chat-box-user-account-info-right {
+  width: 300px;
+  height: 100%;
+  background-color: red;
+  position: absolute;
+  right: 0;
+  top: var(--chat-box-navbar);
+  display: none;
 }
 
 .dashboard-sections .dashboard-left .dashboard-top-cards {
