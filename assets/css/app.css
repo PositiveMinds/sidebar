@@ -46,6 +46,10 @@ body {
   padding: 0;
   transition: var(--transition);
 }
+
+/* ::-webkit-scrollbar {
+  width: 0;
+} */
 /* =====================header design========================== */
 header {
   width: 100%;
@@ -761,11 +765,36 @@ heaser .navbar-msg-box {
 .dashboard-sections .chat-box .chat-box-content .chat-right-content {
   /* margin-top: var(--chat-box-navbar); */
   /* margin-top: 1rem; */
+  /* overflow-y: auto; */
   overflow-y: auto;
   /* height: calc(100% - var(--chat-box-navbar)); */
   height: 80vh;
   width: 100%;
+  background-image: url("https://raw.githubusercontent.com/telegramdesktop/tdesktop/dev/Telegram/Resources/art/bg_initial.jpg");
+  background-position-y: -54px;
+  background-attachment: fixed;
 }
+
+.dashboard-sections .chat-box .chat-right-content::-webkit-scrollbar {
+  width: 0;
+  background: var(--purple);
+  opacity: 0;
+  /* background: transparent; */
+}
+
+/* Track */
+.dashboard-sections .chat-box .chat-right-content::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px grey;
+  border-radius: 10px;
+  transition: var(--transition);
+}
+
+/* Handle */
+.dashboard-sections .chat-box .chat-right-content::-webkit-scrollbar-thumb {
+  background: red;
+  border-radius: 10px;
+}
+
 .dashboard-sections .chat-box .chat-right .chat-right-container {
   /* overflow: hidden; */
   /* background: #419fd9;
