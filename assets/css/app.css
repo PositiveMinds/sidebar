@@ -31,6 +31,7 @@
 
   --chat-left: 350px;
   --chat-box-navbar: 3rem;
+  --chatrightcontent-Height: 80vh;
 }
 body {
   font-family: "Poppins", sans-serif;
@@ -194,8 +195,6 @@ header .logout-box .logout-icon {
   align-items: center;
 }
 
-heaser .navbar-msg-box {
-}
 /* ================sidebar design======================= */
 .sidebar {
   position: fixed;
@@ -594,7 +593,7 @@ heaser .navbar-msg-box {
   top: 0.5rem;
   width: 2rem;
   height: 2rem;
-  color: var(--white);
+  color: var(--grey);
   z-index: 1;
   display: grid;
   place-items: center;
@@ -754,6 +753,20 @@ heaser .navbar-msg-box {
   height: var(--chat-box-navbar);
   width: 100%;
   background: var(--white);
+  display: flex;
+  align-items: center;
+  -webkit-box-shadow: 0px 14px 10px -18px rgba(5, 5, 5, 0.225);
+  -moz-box-shadow: 0px 14px 10px -18px rgba(5, 5, 5, 0.225);
+  box-shadow: 0px 14px 10px -18px rgba(5, 5, 5, 0.225);
+  z-index: 10;
+}
+.chat-box-content .chat-right .chatbox-navbar .toggle-chat-left {
+  font-size: 1.5rem;
+  display: grid;
+  place-items: center;
+  width: 2rem;
+  height: 2rem;
+  cursor: pointer;
 }
 
 .dashboard-sections .chat-box .chat-box-content .chat-right {
@@ -768,7 +781,7 @@ heaser .navbar-msg-box {
   /* overflow-y: auto; */
   overflow-y: auto;
   /* height: calc(100% - var(--chat-box-navbar)); */
-  height: 80vh;
+  height: 77.1vh;
   width: 100%;
   background-image: url("https://raw.githubusercontent.com/telegramdesktop/tdesktop/dev/Telegram/Resources/art/bg_initial.jpg");
   background-position-y: -54px;
@@ -791,7 +804,7 @@ heaser .navbar-msg-box {
 
 /* Handle */
 .dashboard-sections .chat-box .chat-right-content::-webkit-scrollbar-thumb {
-  background: red;
+  /* background: red; */
   border-radius: 10px;
 }
 
@@ -801,7 +814,7 @@ heaser .navbar-msg-box {
   background-image: url(https://s-media-cache-ak0.pinimg.com/originals/51/ed/c0/51edc046eb80046ee4755ee71d0f19ca.jpg); */
   width: 100%;
   /* height: calc(100% - var(--chat-box-navbar)); */
-  overflow-y: auto;
+  /* overflow-y: auto; */
   /* position: absolute; */
 }
 
@@ -837,6 +850,16 @@ heaser .navbar-msg-box {
   border-top-left-radius: 20px;
   border-top-right-radius: 20px;
   border-bottom-left-radius: 20px;
+  /* background-image: linear-gradient(
+    to right bottom,
+    #f97a2e,
+    #f7564b,
+    #e83667,
+    #cb2681,
+    #9f2d95
+  ); */
+  color: var(--white);
+  background: var(--purple);
 }
 
 .message__inner {
@@ -849,6 +872,7 @@ heaser .navbar-msg-box {
   background: #fff;
   /* border-radius: 7px; */
   overflow-wrap: break-word;
+  font-size: 0.7rem;
 }
 /* .message__inner:last-of-type() {
   position: relative;
@@ -914,6 +938,71 @@ heaser .navbar-msg-box {
   padding-right: 5px;
 }
 
+/* msg-text-box==================================================== */
+
+.msg-text-box {
+  width: 100%;
+  height: 10vh;
+  background: var(--white);
+}
+.msg-text-box .msg-text-form {
+  width: 100%;
+  height: 100%;
+  display: grid;
+  grid-template-columns: repeat(4, 5% 80% 5% 10%);
+}
+.msg-text-box .msg-text-form .input-file-box {
+  height: 100%;
+}
+.msg-text-box .msg-text-form .input-file-box input {
+  display: none;
+}
+.msg-text-box .msg-text-form .input-file-box label,
+.msg-text-box .msg-text-form .msg-text-msg-emoji-box {
+  cursor: pointer;
+  display: grid;
+  place-items: center;
+  width: 100%;
+  height: 100%;
+  font-size: 1.6rem;
+}
+.msg-text-box .msg-text-form .text-msg-wrapper {
+  display: flex;
+  align-items: center;
+}
+.msg-text-box .msg-text-form .user-msg-textarea {
+  background: transparent;
+  width: 100%;
+  height: 80%;
+  border: 0;
+  padding: 0 1rem;
+  resize: none;
+  font-size: 0.9rem;
+}
+.msg-text-box .msg-text-form .user-msg-textarea:focus {
+  outline: none;
+}
+.msg-text-box .msg-text-form .msg-text-msg-emoji-box {
+  color: var(--grey);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.msg-text-box .msg-text-form .text-msg-bottom-icon {
+  color: var(--grey);
+}
+
+.msg-text-box .msg-text-form .send-msg-text-btn {
+  color: var(--grey);
+  font-size: 1.5rem;
+  cursor: pointer;
+  border: 0;
+  background: transparent;
+}
+.msg-text-box .msg-text-form .send-msg-text-btn:hover {
+  color: var(--dark-blue);
+}
+
 .chat-box-user-account-info-right {
   width: 300px;
   height: 100%;
@@ -923,6 +1012,8 @@ heaser .navbar-msg-box {
   top: var(--chat-box-navbar);
   display: none;
 }
+
+/* =========================================================== */
 
 .dashboard-sections .dashboard-left .dashboard-top-cards {
   display: grid;

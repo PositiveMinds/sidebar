@@ -11,7 +11,7 @@
       rel="stylesheet" />
     <link rel="stylesheet" href="assets/css/app.css" />
 
-    <link rel="stylesheet" href="assets/css/charts.css" />
+<link rel="stylesheet" href="assets/pluggins/emoji/emojionearea.min.css">
   </head>
 
   <body>
@@ -283,7 +283,7 @@
             <div class="chat-box hide-chatbox">
 
               <div class="chat-box-content">
-                <div class="close-chat-box"><i class='bx bx-x'></i></div>
+                <!-- <div class="close-chat-box"><i class='bx bx-x'></i></div> -->
                 <div class="chat-left">
                   <div class="chat-left-container">
                     <span class="new-chat-btn"><i class='bx bx-plus'></i>New Conversation</span>
@@ -356,17 +356,22 @@
                 </div>
                 <div class="chat-right">
                   <div class="chat-right-container">
-                    <div class="chatbox-navbar"></div>
+                    <div class="chatbox-navbar">
+                      
+                      <span class="toggle-chat-left"><i class='bx bx-menu' ></i></span>
+                      <div class="close-chat-box"><i class='bx bx-x'></i></div>
+                    </div>
+                    <!-- <div class="chat-main"></div> -->
                     <div class="chat-right-content">
                       <div class="message" dir="auto">
                         <div class="message__outer">
                           <div class="message__avatar">
-                              <img class="avatar" src="assets/images/users/3.jpg" alt="Photo of Ahmad Shadeed">
+                            <img class="avatar" src="assets/images/users/3.jpg" alt="Photo of Ahmad Shadeed">
                           </div>
                           <div class="message__inner msg_recipient">
                             <div class="message__bubble ">hello</div>
                             <div class="message__actions">
-                               <ul class="menu"></ul>
+                              <ul class="menu"></ul>
                             </div>
                             <!-- <div class="message__spacer"></div> -->
                           </div>
@@ -376,12 +381,12 @@
                       <div class="message" dir="auto">
                         <div class="message__outer">
                           <div class="message__avatar">
-                              <img class="avatar" src="assets/images/users/3.jpg" alt="Photo of Ahmad Shadeed">
+                            <img class="avatar" src="assets/images/users/3.jpg" alt="Photo of Ahmad Shadeed">
                           </div>
                           <div class="message__inner msg_recipient">
                             <div class="message__bubble ">hello</div>
                             <div class="message__actions">
-                               <ul class="menu"></ul>
+                              <ul class="menu"></ul>
                             </div>
                             <!-- <div class="message__spacer"></div> -->
                           </div>
@@ -390,6 +395,7 @@
                       </div>
 
 
+                
                       <div class="message" dir="auto">
                         <div class="message__outer msg_sender">
                           <!-- <div class="message__avatar">
@@ -398,7 +404,7 @@
                           <div class="message__inner ">
                             <div class="message__bubble ">hello, Whats up bro, how yuh doin? been waiting mhan, whats happening</div>
                             <div class="message__actions">
-                               <ul class="menu"></ul>
+                              <ul class="menu"></ul>
                             </div>
                             <div class="message__spacer"></div>
                           </div>
@@ -406,16 +412,15 @@
                         </div>
                       </div>
 
-
-                                 <div class="message" dir="auto">
+                             <div class="message" dir="auto">
                         <div class="message__outer">
                           <div class="message__avatar">
-                              <img class="avatar" src="assets/images/users/3.jpg" alt="Photo of Ahmad Shadeed">
+                            <img class="avatar" src="assets/images/users/3.jpg" alt="Photo of Ahmad Shadeed">
                           </div>
                           <div class="message__inner msg_recipient">
-                            <div class="message__bubble ">Nara mahna wkaajagaiafgshiqghidqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqq</div>
+                            <div class="message__bubble ">hello</div>
                             <div class="message__actions">
-                               <ul class="menu"></ul>
+                              <ul class="menu"></ul>
                             </div>
                             <!-- <div class="message__spacer"></div> -->
                           </div>
@@ -431,37 +436,45 @@
                           <div class="message__inner ">
                             <div class="message__bubble ">hello, Whats up bro, how yuh doin? been waiting mhan, whats happening</div>
                             <div class="message__actions">
-                               <ul class="menu"></ul>
+                              <ul class="menu"></ul>
                             </div>
                             <div class="message__spacer"></div>
                           </div>
-                          <div class="message__status"><span class="avatar"></span></div>
-                        </div>
-                      </div>
-                      <div class="message" dir="auto">
-                        <div class="message__outer msg_sender">
-                          <!-- <div class="message__avatar">
-                              <img class="avatar" src="assets/images/users/3.jpg" alt="Photo of Ahmad Shadeed">
-                          </div> -->
-                          <div class="message__inner ">
-                            <div class="message__bubble ">hello, Whats up bro, how yuh doin? been waiting mhan, whats happening</div>
-                            <div class="message__actions">
-                               <ul class="menu"></ul>
-                            </div>
-                            <div class="message__spacer"></div>
-                          </div>
-                       
+
                           <div class="message__status"><span class="avatar"></span></div>
                         </div>
                       </div>
 
                     </div>
+                    <div class="msg-text-box">
+                      <form class="msg-text-form">
+                        <!-- <div class="input-file-box"><input type="file" accept="image/png, image/jpg, image/gif, image/jpeg"/></div> -->
+                        <div class="input-file-box">
+                          <label for="inputTag">
+                            <i class='bx bxs-camera text-msg-bottom-icon' ></i>
+                            <input id="inputTag" type="file" accept="image/png, image/jpg, image/gif, image/jpeg" />
+                          </label>
+                        </div>
+                        <div class="text-msg-wrapper"><input type="text" name="" class="user-msg-textarea" placeholder="Send message..." id="textarea"></div>
+                        <script>
+                       $(ducument).ready(function(){
+                            $("#textarea").emojioneArea();
+                       })
+                        </script>
+                       
+                        <div class="msg-text-msg-emoji-box">
+                          <span class="emoji-icon"><i class='bx bx-smile text-msg-bottom-icon'></i></span>
+                          <div class="emoji-menu"></div>
+                        </div>
+                        <button class="send-msg-text-btn"><i class='bx bxs-send' text-msg-bottom-icon></i></button>
+                      </form>
+                    </div>
                   </div>
                 </div><!-- =========chat-right ends=============================== -->
 
-              <div class="chat-box-user-account-info-right">
+                <div class="chat-box-user-account-info-right">
 
-              </div>
+                </div>
               </div>
             </div><!-- =========chat-box ends=============================== -->
             <div class="dashboard-top-cards">
@@ -799,8 +812,12 @@
       <!-- =========section ends -->
     </main>
 
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/emojionearea/3.4.2/emojionearea.min.js"></script>
+
     <script src="assets/js/app.js"></script>
-    <script src="https://cdn.jsdelivr.net/gh/tofsjonas/sortable/sortable.min.js"></script>
+    <script src="assets/pluggins/emoji/emojionearea.min.js"></script>
   </body>
 
 </html>
